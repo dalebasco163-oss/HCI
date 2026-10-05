@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Member User ID Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Online Member Registration</div>
+      <button type="button" class="theme-btn" id="themeToggle">
+        🌙 Dark Mode
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="card-header">
+        <h1>Online Member User ID Registration</h1>
+        <p>Create your member account using the information requested below.</p>
+      </div>
+
+      <form id="registrationForm" novalidate>
+        <div class="required-note">* Required Field</div>
+
+        <div class="notice">
+          Please supply the following information as reported to the Social Security System.
+          This is a student/demo registration form and does not send your information to a real SSS server.
+        </div>
+
+        <h2 class="section-title">Account Information</h2>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="ssNumber"><span class="required">*</span> CRN / SS Number</label>
+            <input id="ssNumber" name="ssNumber" type="text" inputmode="numeric"
+                   placeholder="e.g. 12-3456789-0" autocomplete="off">
+            <div class="error"></div>
+          </div>
+
+          <div class="field">
+            <label for="email"><span class="required">*</span> Email Address</label>
+            <input id="email" name="email" type="email"
+                   placeholder="example@email.com">
+            <div class="error"></div>
+          </div>
+
+          <div class="field">
+            <label for="confirmEmail"><span class="required">*</span> Confirm Email Address</label>
+            <input id="confirmEmail" name="confirmEmail" type="email">
+            <div class="error"></div>
+          </div>
+
+          <div class="field">
+            <label for="userId"><span class="required">*</span> Preferred User ID</label>
+            <input id="userId" name="userId" type="text"
+                   maxlength="20" placeholder="Example: Juan_Cruz1234">
+            <p class="help">8–20 characters. First character must be a letter. Letters, numbers, and underscore only.</p>
+            <div class="error"></div>
+          </div>
+
+          <div class="field">
+            <label for="confirmUserId"><span class="required">*</span> Confirm Preferred User ID</label>
+            <input id="confirmUserId" name="confirmUserId" type="text" maxlength="20">
+            <div class="error"></div>
+          </div>
+        </div>
+
+        <h2 class="section-title">Personal Information</h2>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="surname"><span class="required">*</span> Surname / Last Name</label>
+            <input id="surname" name="surname" type="text">
+            <div class="error"></div>
+          </div>
+
+          <div class="field">
+            <label for="givenName"><span class="required">*</span> Given Name</label>
+            <input id="givenName" name="givenName" type="text">
+            <div class="error"></div>
+          </div>
+
+          <div class="field">
+            <label for="middleName">Middle Name</label>
+            <input id="middleName" name="middleName" type="text">
+            <div class="error"></div>
+          </div>
+
+          <div class="field">
+            <label for="birthDate"><span class="required">*</span> Date of Birth</label>
+            <input id="birthDate" name="birthDate" type="date">
+            <div class="error"></div>
+          </div>
+        </div>
+
+        <h2 class="section-title">Mailing Address (Philippine Address)</h2>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="room">Room / Floor / Unit No. & Building Name</label>
+            <input id="room" name="room" type="text">
+            <div class="error"></div>
+          </div>
+
+          <div class="field">
+            <label for="house">House / Lot & Block No.</label>
+            <input id="house" name="house" type="text">
+            <div class="error"></div>
+          </div>
+
+          <div class="field">
+            <label for="street">Street</label>
+            <input id="street" name="street" type="text">
+            <div class="error"></div>
+          </div>
+
+          <div class="field">
+            <label for="subdivision">Subdivision</label>
+            <input id="subdivision" name="subdivision" type="text">
+            <div class="error"></div>
+          </div>
+
+          <div class="field full">
+            <label>Location Type</label>
+            <div class="location-options">
+              <label class="check">
+                <input type="checkbox" id="metroManila" name="location" value="Metro Manila">
+                Metro Manila
+              </label>
+
+              <label class="check">
+                <input type="checkbox" id="province" name="location" value="Province">
+                Province
+              </label>
+            </div>
+            <div class="error" id="locationError"></div>
+          </div>
+        </div>
+
+        <div id="formMessage" class="message"></div>
+
+        <div class="actions">
+          <button type="reset" class="btn">Clear Form</button>
+          <button type="submit" class="btn primary">Register</button>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      Student Web Development Activity • Front-end demo only
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
